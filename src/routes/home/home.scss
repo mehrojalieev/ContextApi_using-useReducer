@@ -1,0 +1,118 @@
+.product-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    height: 100vh;
+    margin: 50px auto;
+    overflow-y: auto;
+}
+.product__card-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px 10px;
+}
+.product-card{
+    width: 350px;
+    border-radius: 25px;
+    overflow: hidden;
+    color: #fff;
+    padding-bottom: 10px;
+    box-shadow: 0 0 5px gray;
+    .card-img{
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+        img{
+            width: 100%;
+            height: 100%;
+            transition: 0.3s;
+            &:hover{
+                transform: scale(1.09);
+            }
+        }
+    }
+}
+.product-content{
+    display: flex;
+    flex-direction: column;
+    gap: 15px 0;
+    margin-top: 10px;
+    padding: 0px 10px;
+    h3{
+        font-size: 20px;
+        font-weight: 700;
+    }
+    p{
+        font-size: 16px;
+        line-height: 20px;
+        color: #b8b6b6;
+    }
+   .price-card{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0px 30px;
+    strong{
+        font-size: 20px;
+        font-weight: 700;
+        color: #fff;
+    }
+    span{
+        font-size: 18px;
+        font-weight: 700;
+        color: #18a661;
+        padding: 3px 5px ;
+        border: 1px solid #18a661;
+        border-radius: 4px;
+        
+    }
+   }
+   .card-btns{
+    display: flex;
+    align-items: center;
+    gap: 0px 17px;
+        .view-btn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 230px;
+            padding: 10px 0px;
+            border: none;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 30px;
+            background-color: #18a661;
+            transition: 0.3s;
+            text-decoration: none;
+            &:hover{
+                cursor: pointer;
+                transform: scale(1.05);
+            }
+        }
+        .like-btn{
+             border: 1px solid #18a661;
+            border-radius: 50%;
+            background: transparent;
+            padding:6px 7px 1px 7px;
+            color: #18a661;
+            font-size: 20px;
+            transition: 0.2s;
+            &:hover{
+                background-color: #18a661;
+                color: #fff;
+                transform: scale(1.2);
+                cursor: pointer;
+            }
+            &:active{
+                border: 1px solid #fff;
+                background-color: #18a661;
+                color: #fff;
+                transform: scale(0.95);
+            }
+        }
+   }
+}
