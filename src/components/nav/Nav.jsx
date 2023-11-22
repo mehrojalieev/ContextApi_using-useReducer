@@ -1,5 +1,6 @@
 import "./nav.scss"
 import { NavLink} from "react-router-dom"
+import { FaShoppingCart } from "react-icons/fa";
 const Nav = () => {
   return (
     <nav>
@@ -11,7 +12,7 @@ const Nav = () => {
           <NavLink className={({ isActive }) => isActive ? " link--active" : "isActive"} to="about">About</NavLink>
         </li>
         <li>
-          <NavLink className={({ isActive }) => isActive ? "link--active" : "isActive"} to="ContactUs">Contact us</NavLink>
+          <NavLink className={({ isActive }) => isActive ? "link--active" : "isActive"} to="product-cart">Carts <FaShoppingCart /></NavLink>
         </li>
         
       </ul>

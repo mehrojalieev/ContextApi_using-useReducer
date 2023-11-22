@@ -16,6 +16,10 @@ nav{
     gap: 0px 30px;
     list-style: none;
     a{
+        display: flex;
+        align-items: center;
+        gap: 0px 6px;
+        letter-spacing: 1px;
         text-decoration: none;
         font-size: 20px;
         transition: 0.2s;
