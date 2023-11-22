@@ -27,7 +27,13 @@ const ProductView = () => {
 
   return (
     <div className="product__view-wrapper">
-        
+        <div className="product_image">
+          <img src={singleData.images} alt="" />
+        </div>
+        <div className="product-content">
+          <h2>{singleData.title}</h2>
+          <p>{singleData.description}</p>
+        </div>
     </div>
   )
 }
