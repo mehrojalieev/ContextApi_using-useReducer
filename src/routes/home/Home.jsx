@@ -3,32 +3,33 @@ import { useState, useReducer, useEffect } from 'react'
 import { FaCartPlus } from "react-icons/fa"
 import { apiInstance } from "../../api"
 import { Link } from "react-router-dom"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 
 
 
 const Home = () => {
     const dispatch = useDispatch()
- const [products, setProducts] = useState([])
+    const cartproducts = useSelector(state => state.cart.cart_products)
+    const [products, setProducts] = useState([])
+    useEffect(() => {
+        apiInstance('/products')
+            .then(response => {
+                setProducts(response.data)
+                console.log(response.data);
+            })
+    }, [])
 
- useEffect(() => {
-    apiInstance('/products')
-    .then(response => {
-        setProducts(response.data)
-        console.log(response.data);
-    })
- }, [])
-
- const handleAddToCart = (product) => {
-    dispatch({type: "ADD_TO_CART", product})
- }
-
+    const handleAddToCart = (product) => {
+        product.count = 1;
+        dispatch({ type: "ADD_TO_CART", product })
+    }
+    console.log(cartproducts);
     return (
         <>
             <div className='product-wrapper'>
                 <div className="product__card-container">
                     {
-                        products    .splice(0, 30).map((product, index) =>
+                        products.splice(0, 30).map((product, index) =>
                             <div key={index} className='product-card'>
                                 <div className="card-img">
                                     <img src={product.images} height={130} />
