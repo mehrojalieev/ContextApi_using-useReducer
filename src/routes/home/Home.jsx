@@ -1,6 +1,6 @@
 import "./home.scss"
 import { useState, useReducer, useEffect } from 'react'
-import { MdFavoriteBorder } from "react-icons/md"
+import { FaCartPlus } from "react-icons/fa"
 import { apiInstance } from "../../api"
 import { Link } from "react-router-dom"
 
@@ -15,8 +15,6 @@ const Home = () => {
 
     // RENDER DATA
     const [count, dispatch] = useReducer(reducer, [])
-
-    // BIRINCHI USUL !!!!
     useEffect(() => {
         function renderData() {
             try {
@@ -30,12 +28,6 @@ const Home = () => {
         renderData()
     }, [])
 
-    // IKKINCHI USUL !!!!
-    // useEffect(() => {
-    //     fetch("https://api.escuelajs.co/api/v1/products")
-    //         .then(response => response.json())
-    //         .then(data => dispatch(data))
-    // }, [])
     return (
         <>
             <div className='product-wrapper'>
@@ -55,7 +47,7 @@ const Home = () => {
                                     </div>
                                     <div className="card-btns">
                                         <Link className='view-btn' to={`product-view/${product.id}`}>View Deal  &#8599;</Link>
-                                        <button className='like-btn'><i><MdFavoriteBorder /></i></button>
+                                        <button className='addcart-btn'><i><FaCartPlus /></i></button>
                                     </div>
                                 </div>
 
