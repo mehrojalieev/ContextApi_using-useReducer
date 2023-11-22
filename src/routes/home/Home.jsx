@@ -3,37 +3,32 @@ import { useState, useReducer, useEffect } from 'react'
 import { FaCartPlus } from "react-icons/fa"
 import { apiInstance } from "../../api"
 import { Link } from "react-router-dom"
+import { useDispatch } from "react-redux"
 
 
-const reducer = (state, action) => {
-    return action
-}
 
 const Home = () => {
+    const dispatch = useDispatch()
+ const [products, setProducts] = useState([])
 
+ useEffect(() => {
+    apiInstance('/products')
+    .then(response => {
+        setProducts(response.data)
+        console.log(response.data);
+    })
+ }, [])
 
-
-    // RENDER DATA
-    const [count, dispatch] = useReducer(reducer, [])
-    useEffect(() => {
-        function renderData() {
-            try {
-                apiInstance("/products")
-                    .then(response => dispatch(response.data))
-            }
-            catch (error) {
-                console.log(error);
-            }
-        }
-        renderData()
-    }, [])
+ const handleAddToCart = (product) => {
+    dispatch({type: "ADD_TO_CART", product})
+ }
 
     return (
         <>
             <div className='product-wrapper'>
                 <div className="product__card-container">
                     {
-                        count.splice(0, 30).map((product, index) =>
+                        products    .splice(0, 30).map((product, index) =>
                             <div key={index} className='product-card'>
                                 <div className="card-img">
                                     <img src={product.images} height={130} />
@@ -47,7 +42,7 @@ const Home = () => {
                                     </div>
                                     <div className="card-btns">
                                         <Link className='view-btn' to={`product-view/${product.id}`}>View Deal  &#8599;</Link>
-                                        <button className='addcart-btn'><i><FaCartPlus /></i></button>
+                                        <button onClick={() => handleAddToCart(product)} className='addcart-btn'><i><FaCartPlus /></i></button>
                                     </div>
                                 </div>
 

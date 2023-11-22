@@ -3,9 +3,9 @@ const initialState = {
 }
 
 
-const cartReducer = (state = initialState, action ) => {
-    return action
-}  
+const cartReducer = (state = initialState, action) => {
+    return state
+}
 
 
-export {cartReducer}
+export { cartReducer }
