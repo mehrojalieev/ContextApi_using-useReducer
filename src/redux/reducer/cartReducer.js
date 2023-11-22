@@ -13,7 +13,7 @@ const cartReducer = (state = initialState, action) => {
                     newcart = [...state.cart_products, action.product]
                 }
             return {
-                cart_products: newcart
+                cart_products: newcart  
             }
             default: return state 
     }

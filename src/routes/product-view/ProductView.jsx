@@ -7,7 +7,7 @@ import { apiInstance } from "../../api";
 const ProductView = () => {
   const {id} = useParams()
 
-  const [singleData, setSingleData] = useState([])
+  const [singleData, setSingleData] = useState({})
 
   useEffect(() => {
       async function singleProduct() {
@@ -27,13 +27,7 @@ const ProductView = () => {
 
   return (
     <div className="product__view-wrapper">
-        {
-          singleData.map(product => 
-            <>
-              <img src={product.data.images[0]} alt="" />
-            </>
-            )
-        }
+        
     </div>
   )
 }
