@@ -9,7 +9,8 @@
 }
 
 .product_image {
-    width: 500px;
+    display: flex;
+    min-width: 500px;
     height: 100%;
     overflow: hidden;
     border-radius: 20px;
@@ -22,6 +23,10 @@
             transform: scale(1.2);
             cursor: pointer;
         }
+    }
+    .placeholder-image{
+        width: 400px;
+        height: 100%;
     }
 }
 

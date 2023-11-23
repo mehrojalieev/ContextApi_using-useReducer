@@ -29,16 +29,16 @@ const ProductView = () => {
   return (
     <div className="product__view-wrapper">
       <div className="product_image">
-        
-          singleData ? <img src={singleData.images} alt="Image-Product" />
-            
-          
+        {
+          singleData.images ? <img src={singleData.images} alt="Image-Product" />
+            :   <img className="placeholder-image" width={400} height={300} src="https://craftsnippets.com/articles_images/placeholder/placeholder.jpg" alt="" />
+
+        }
       </div>
       <div className="product-content">
         <h2>{singleData.title}</h2>
         <p>{singleData.description}</p>
       </div>
-          {/* <Skeleton width={} count={5} /> */}
     </div>
   )
 }
