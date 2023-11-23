@@ -8,7 +8,8 @@ const cartReducer = (state = initialState, action) => {
         case "ADD_TO_CART":
             let newcart = state.cart_products;
             const product_index = state.cart_products.findIndex(product => 
-                product.product_id === action.product.product_id)
+                product.id === action.product.id)
+                console.log(product_index)
                 if(product_index === -1){
                     newcart = [...state.cart_products, action.product]
                 }

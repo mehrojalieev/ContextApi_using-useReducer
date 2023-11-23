@@ -26,16 +26,16 @@
 }
 
 .product-content {
-    width: 600px;
     h2{
         font-size: 2.6rem;
         letter-spacing: 1px;
-        color: #18a661;
+        color: #18a661; 
     }
     p{
         margin-top: 30px;
         line-height: 26px !important;
         letter-spacing: 0.5px;
         font-size: 20px !important;
+        word-break: break-all !important;
     }
 }
