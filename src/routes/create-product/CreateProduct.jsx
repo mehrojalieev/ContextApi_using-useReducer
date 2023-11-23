@@ -35,12 +35,15 @@ const CreatePRoduct = () => {
     }
 
     return (
-        <div>
-            <form onSubmit={handleCreateProduct}>
+        <div className="create__product-wrapper">
+            <form className="create-form" onSubmit={handleCreateProduct}>
+            <h2>CREATE PRODUCT</h2>
                 <input value={title} onChange={(e) => setTitle(e.target.value)} type="text" placeholder="Title" />
+                <div className="product-count">
                 <input value={price} onChange={(e) => setPrice(e.target.value)} type="number" placeholder="Price" />
-                <input value={description} onChange={(e) => setDescription(e.target.value)} type="text" placeholder="Description" />
                 <input value={categoryId} onChange={(e) => SetCategoryId(e.target.value)} type="number" placeholder="Categoryid" />
+                </div>
+                <input value={description} onChange={(e) => setDescription(e.target.value)} type="text" placeholder="Description" />
                 <input value={image} onChange={(e) => setImage(e.target.value)} type="text" placeholder="Image" />
                 <button type="submit">Create</button>
             </form>

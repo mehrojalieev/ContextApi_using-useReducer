@@ -1,0 +1,58 @@
+.create__product-wrapper{
+    display: grid;
+    place-items: center;
+    
+}
+.create-form{
+    width: 550px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px 10px;
+    padding: 20px 15px;
+    border-radius: 10px;
+    margin-top: 50px;
+    border: 1px solid var(--success-color);
+    h2{
+        font-size: 2rem;
+        color: var(--success-color);
+        letter-spacing: 1px;
+    }
+    input{
+        width: 100%;
+        height: 50px;
+        text-indent: 10px;
+        border: 1px solid var(--success-color);
+        border-radius: 5px;
+        background: transparent;
+        font-size: 18px;
+        color: #fff;
+        outline: none;
+    }
+    button{
+        width: 100%;
+        padding: 8px 0;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        transition: 0.2s;
+        background: var(--success-color);
+        color: #fff;
+        
+        &:hover{
+            cursor: pointer;
+            transform: scale(1.03);
+        }
+    }
+}
+
+.create-form > .product-count{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    input{
+        width: 250px;
+    }
+}
