@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import "./CreateProduct.scss"
+import { apiInstance } from "../../api"
 
 const CreatePRoduct = () => {
 
@@ -33,7 +34,23 @@ const CreatePRoduct = () => {
         .then(data => console.log(data))
         .catch(error => console.log(error))
     }
-
+            // const handleCreateProduct = (e) => {
+            //     e.preventDefault()
+            //     apiInstance("/products", {
+            //         method: "POST",
+            //         body: {
+            //             title: title,
+            //             price: price,
+            //             description: description,
+            //             categoryId: categoryId,
+            //             images: [image]
+            //         },
+            //         headers: {
+            //             "Content-Type": 'application/json'
+            //         }
+            //     })
+            //     .then(response => console.log(response))
+            // }
     return (
         <div className="create__product-wrapper">
             <form className="create-form" onSubmit={handleCreateProduct}>
