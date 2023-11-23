@@ -37,6 +37,11 @@
         &:focus {
             box-shadow: 0 0 8px 2px var(--success-color);
         }
+        &::placeholder{
+            letter-spacing: 2px;
+            font-size: 20px;
+        }
+        
     }
 
     button {
@@ -66,3 +71,7 @@
         width: 250px;
     }
 }
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }

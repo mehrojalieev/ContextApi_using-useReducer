@@ -15,7 +15,7 @@ const Nav = () => {
           <NavLink className={({ isActive }) => isActive ? " link--active" : "isActive"} to="about">About</NavLink>
         </li>
         <li>
-          <NavLink className={({ isActive }) => isActive ? " link--active" : "isActive"} to="about">Contact Us</NavLink>
+          <NavLink className={({ isActive }) => isActive ? " link--active" : "isActive"} to="contact-us">Contact Us</NavLink>
         </li>
         <li>
         </li>
