@@ -24,7 +24,7 @@ const Nav = () => {
 
       <div className="profile-user">
       <NavLink className={({ isActive }) => isActive ? "link--active" : "isActive"} to="product-cart">Carts <FaShoppingCart /></NavLink>
-          <Link to='create-product'>Create Product</Link>
+          <Link className="create__product-link" to='create-product'>Create Product</Link>
       </div>
     </nav>
   )

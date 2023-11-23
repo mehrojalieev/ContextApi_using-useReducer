@@ -9,7 +9,7 @@ nav{
     max-width: 1200px;   
     margin:  auto;
     padding: 0px 20px;
-    height: 50px;
+    height: 70px;
     // background-color: rgb(46, 46, 43);
 }
 .nav__logo{
@@ -52,6 +52,20 @@ nav{
         color: #fff;
         font-size: 20px;
         letter-spacing: 1px;
+    }
+}
+
+.create__product-link{
+    padding: 10px 10px;
+    border-radius: 5px;
+    transition: 0.2s;
+    background-color: var(--success-color);
+    &:hover{
+        transform: scale(1.03);
+        box-shadow: 0 0 10px 1px var(--success-color);
+    }
+    &:active{
+        transform: scale(0.96);
     }
 }
 .link--active{
