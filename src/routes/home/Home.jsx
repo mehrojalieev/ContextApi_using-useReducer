@@ -1,16 +1,18 @@
-import "./home.scss"
 import { useState, useReducer, useEffect, useRef } from 'react'
 import { FaCartPlus } from "react-icons/fa"
 import { apiInstance } from "../../api"
 import { Link } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 
+import "./home.scss"
 
 
 const Home = () => {
     const dispatch = useDispatch()
     const cartproducts = useSelector(state => state.cart.cart_products)
     const [products, setProducts] = useState([])
+    const btn = useRef()
+
     useEffect(() => {
         apiInstance('/products')
             .then(response => {
@@ -19,19 +21,13 @@ const Home = () => {
             })
     }, [])
 
-    const addBtn = useRef()
-    const addCBtn = addBtn.current
+
     const handleAddToCart = (product) => {
-        addCBtn.classList.add("activeBtn")
         product.count = 1;
         dispatch({ type: "ADD_TO_CART", product })
+        // cartproducts.findIndex(a => a.id === product.id ) !== -1 ? btn.current.style = "background-color: red !important" : btn.current.style = "color: blue"  
     }
 
-    const addActiveStyle = (id) => {
-        if(id){
-            addCBtn.classList.add("activeBtn")
-        }
-    }
     console.log(cartproducts);
     return (
         <>
@@ -52,10 +48,8 @@ const Home = () => {
                                     </div>
                                     <div className="card-btns">
                                         <Link className='view-btn' to={`product-view/${product.id}`}>View Deal  &#8599;</Link>
-                                        <button ref={addBtn} onClick={() => {
-                                            handleAddToCart(product)
-                                            addActiveStyle(index)
-                                        }} className='addcart-btn'><i><FaCartPlus /></i></button>
+
+                                        <button  ref={btn} onClick={() => {handleAddToCart(product) }} className={'addcart-btn'}><i><FaCartPlus /></i> </button>
                                     </div>
                                 </div>
 

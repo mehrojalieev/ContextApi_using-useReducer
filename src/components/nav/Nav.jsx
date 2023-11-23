@@ -1,5 +1,5 @@
 import "./nav.scss"
-import { NavLink} from "react-router-dom"
+import { NavLink, Link} from "react-router-dom"
 import { FaShoppingCart } from "react-icons/fa";
 const Nav = () => {
   return (
@@ -16,6 +16,10 @@ const Nav = () => {
         </li>
         
       </ul>
+
+      <div className="profil-user">
+          <Link to='create-product'>Create Product</Link>
+      </div>
     </nav>
   )
 }

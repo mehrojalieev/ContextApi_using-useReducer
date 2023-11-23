@@ -108,34 +108,26 @@
             }
         }
 
-        .addcart-btn {
-            border: 1px solid #18a661;
-            border-radius: 50%;
-            background: transparent;
-            padding: 8px 10px 2px 9px;
-            color: #18a661;
-            font-size: 24px;
-            transition: 0.2s;
 
-            &:hover {
-                background-color: #18a661;
-                color: #fff;
-                transform: scale(1.2);
-                cursor: pointer;
-            }
-
-            &:active {
-                border: 1px solid #fff;
-                background-color: #18a661;
-                color: #fff;
-                transform: scale(0.95);
-            }
-        }
     }
 }
+.addcart-btn {
+    border: 1px solid #18a661;
+    border-radius: 50%;
+    background: transparent;
+    padding: 8px 10px 2px 9px;
+    color: #18a661;
+    font-size: 24px;
+    transition: 0.2s;
 
-.activeBtn {
+
+}
+.active {
     border: 1px solid #fff;
     background-color: #18a661;
     color: #fff;
+    transform: scale(0.95);
+    font-size: 24px;
+    padding: 8px 10px 2px 9px;
+    border-radius: 50%;
 }
