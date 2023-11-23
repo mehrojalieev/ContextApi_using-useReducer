@@ -1,9 +1,10 @@
-.create__product-wrapper{
+.create__product-wrapper {
     display: grid;
     place-items: center;
-    
+
 }
-.create-form{
+
+.create-form {
     width: 550px;
     height: auto;
     display: flex;
@@ -14,12 +15,14 @@
     border-radius: 10px;
     margin-top: 50px;
     border: 1px solid var(--success-color);
-    h2{
+
+    h2 {
         font-size: 2rem;
         color: var(--success-color);
         letter-spacing: 1px;
     }
-    input{
+
+    input {
         width: 100%;
         height: 50px;
         text-indent: 10px;
@@ -29,8 +32,14 @@
         font-size: 18px;
         color: #fff;
         outline: none;
+        transition: .2s;
+
+        &:focus {
+            box-shadow: 0 0 8px 2px var(--success-color);
+        }
     }
-    button{
+
+    button {
         width: 100%;
         padding: 8px 0;
         border: none;
@@ -39,20 +48,21 @@
         transition: 0.2s;
         background: var(--success-color);
         color: #fff;
-        
-        &:hover{
+
+        &:hover {
             cursor: pointer;
             transform: scale(1.03);
         }
     }
 }
 
-.create-form > .product-count{
+.create-form>.product-count {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    input{
+
+    input {
         width: 250px;
     }
 }

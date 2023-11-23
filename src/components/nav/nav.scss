@@ -4,11 +4,19 @@ nav{
     backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 100%;    
+    justify-content: space-between;
+    width: 100%; 
+    max-width: 1200px;   
     margin:  auto;
+    padding: 0px 20px;
     height: 50px;
-    background-color: rgb(46, 46, 43);
+    // background-color: rgb(46, 46, 43);
+}
+.nav__logo{
+    h1{
+        font-size: 2rem;
+        color: var(--success-color);
+    }
 }
 .nav-menu{
     display: flex;
@@ -31,10 +39,23 @@ nav{
     }
 }
 
+
+.profile-user{
+    display: flex;
+    align-items: center;
+    gap: 0px 30px;
+    a{
+        display: flex;
+        align-items: center;
+        gap: 0px 10px;
+        text-decoration: none;
+        color: #fff;
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+}
 .link--active{
     border-bottom: 2px solid #18a661;
     padding-bottom: 2px;
-
     color: #18a661 !important;
-   
 }
