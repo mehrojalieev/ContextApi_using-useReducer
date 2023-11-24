@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import "./CreateProduct.scss"
-import { apiInstance } from "../../api"
+import { apiInstance } from "../../../api"
 
 const CreatePRoduct = () => {
 
