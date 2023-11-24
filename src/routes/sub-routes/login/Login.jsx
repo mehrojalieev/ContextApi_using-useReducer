@@ -12,12 +12,12 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault()
-      if(loginName === localName && loginEmail === localEmail){
-        setTimeout(() => {window.location.pathname = "/"}, 1700)
-        console.log(true);
-      } else{
-        console.log(false);
-      }
+    if (loginName === localName && loginEmail === localEmail) {
+      setTimeout(() => { window.location.pathname = "/" }, 1700)
+      console.log(true);
+    } else {
+      console.log(false);
+    }
   }
 
   return (
@@ -26,7 +26,7 @@ const Login = () => {
       <form onSubmit={handleLogin} className="login-form">
         <div className="login-name">
           <label htmlFor="Name">Name</label>
-          <input value={loginName} onChange={(e) => setLoginName(e.target.value)}  id="Password" type="text" />
+          <input value={loginName} onChange={(e) => setLoginName(e.target.value)} id="Password" type="text" />
         </div>
         <div className="login-email">
           <label htmlFor="Email">Email</label>
