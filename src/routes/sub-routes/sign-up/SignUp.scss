@@ -1,0 +1,95 @@
+.signup__wrapper{
+    width: 430px;
+    height: auto;
+    margin: 100px auto;
+    border: 1px solid #fff;
+    padding: 10px 15px 20px 15px;
+    border-radius: 15px;
+    h2{
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 2.4rem;
+        letter-spacing: 2px;
+        color: #fff;
+        animation: animateSignUp 3s infinite;
+    }
+}
+
+@keyframes animateSignUp{
+    10%{
+        filter: drop-shadow(0 0 3px #fff);
+    }
+    30%{
+        filter: drop-shadow(0 0 5px #fff);
+    }
+    100%{
+        filter: drop-shadow(0 0 4px #fff);
+    }
+}
+
+.signup-form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 0;
+    align-items: center;
+    .login-email, .login-password{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        label{
+            font-size: 20px;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+        input{
+            font-size: 18px;
+            height: 40px;
+            text-indent: 15px;
+            outline: none;
+            background-color: transparent;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            color: #fff;
+            transition: 0.2s;
+            &:focus{
+                box-shadow: 0 0 6px #fff;
+                filter: drop-shadow(0 0 1px #999898be);
+            }
+
+        }
+    }
+    button{
+        width: 100%;
+        padding: 8px 0px;
+        border: none;
+        border-radius: 5px;
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: .7px;
+        background: transparent;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        margin-top: 10px;
+        color: #fff;
+        transition: 0.2s;
+        &:hover{
+            background-color: #fff;
+            color: #000;
+            box-shadow: 0 0 5px #fff;
+            transform: scale(1.02);
+            cursor: pointer;
+        }
+    }
+}
+.checkout-text{
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: .4px;
+    a{
+        color: var(--success-color);
+        text-decoration: none;
+        font-size: 19px;
+    }
+}
