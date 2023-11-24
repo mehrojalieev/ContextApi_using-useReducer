@@ -21,12 +21,18 @@ const SignUp = () => {
         password: password,
         avatar: avatar
       }),
-      headers:{
+      headers: {
         "Content-Type": 'application/json'
       }
     })
-    .then(response => response.json())
-    .then(data => console.log(data))
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+        if (data) {
+          window.location.pathname = "/auth/login"
+        }
+
+      })
   }
 
   return (
