@@ -10,7 +10,6 @@ nav{
     margin:  auto;
     padding: 0px 20px;
     height: 70px;
-    // background-color: rgb(46, 46, 43);
 }
 .nav__logo{
     h1{
@@ -39,7 +38,34 @@ nav{
     }
 }
 
-
+.navbar-cart{
+    display: flex;
+    align-items: center;
+    .cart{
+        display: flex;
+        align-items: center;
+        gap: 0px 10px;
+        text-decoration: none;
+        color: #fff;
+        font-size: 20px;
+        letter-spacing: 1px;
+        padding: 5px 8px;
+        border-radius: 5px;
+        border: 1px solid var(--success-color);
+        transition: 0.2s;
+        &:hover{
+            background-color: var(--success-color);
+            transform: scale(1.1);
+            letter-spacing: 1.5px;
+        }
+        &:active{
+            transform: scale(.95);
+        }
+    }
+}
+.cart-active{
+    background-color: var(--success-color);
+}
 .profile-user{
     display: flex;
     align-items: center;
@@ -48,10 +74,10 @@ nav{
         display: flex;
         align-items: center;
         gap: 0px 10px;
-        text-decoration: none;
         color: #fff;
         font-size: 20px;
         letter-spacing: 1px;
+        text-decoration: none;
     }
 }
 

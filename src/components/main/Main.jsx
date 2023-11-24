@@ -1,13 +1,11 @@
+import "./Main.scss"
 import { useState, useReducer, useEffect, useRef } from 'react'
 import { FaCartPlus } from "react-icons/fa"
 import { apiInstance } from "../../api"
 import { Link } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 
-import "./home.scss"
-
-
-const Home = () => {
+const Main = () => {
     const dispatch = useDispatch()
     const cartproducts = useSelector(state => state.cart.cart_products)
     const [products, setProducts] = useState([])
@@ -21,14 +19,12 @@ const Home = () => {
             })
     }, [])
 
-
     const handleAddToCart = (product) => {
         product.count = 1;
         dispatch({ type: "ADD_TO_CART", product })
-        // cartproducts.findIndex(a => a.id === product.id ) !== -1 ? btn.current.style = "background-color: red !important" : btn.current.style = "color: blue"  
     }
-
     console.log(cartproducts);
+
     return (
         <>
             <div className='product-wrapper'>
@@ -49,7 +45,7 @@ const Home = () => {
                                     <div className="card-btns">
                                         <Link className='view-btn' to={`product-view/${product.id}`}>View Deal  &#8599;</Link>
 
-                                        <button  ref={btn} onClick={() => {handleAddToCart(product) }} className={'addcart-btn'}><i><FaCartPlus /></i> </button>
+                                        <button ref={btn} onClick={() => { handleAddToCart(product) }} className={'addcart-btn'}><i><FaCartPlus /></i> </button>
                                     </div>
                                 </div>
 
@@ -63,4 +59,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Main

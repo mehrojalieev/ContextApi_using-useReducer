@@ -21,10 +21,12 @@ const Nav = () => {
         </li>
 
       </ul>
+      <div className="navbar-cart">
+      <NavLink className={({ isActive }) => isActive ? " cart cart-active" : "cart"} to="product-cart">Carts <FaShoppingCart /></NavLink>
 
+      </div>
       <div className="profile-user">
-        <NavLink className={({ isActive }) => isActive ? "link--active" : "isActive"} to="product-cart">Carts <FaShoppingCart /></NavLink>
-        <Link className="create__product-link" to='create-product'>Create Product</Link>
+          <Link to="auth/login">Login</Link>
       </div>
     </nav>
   )
