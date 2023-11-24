@@ -1,16 +1,29 @@
 .login__wrapper{
-    width: 400px;
+    width: 430px;
     height: auto;
-    margin: 150px auto;
+    margin: 100px auto;
     border: 1px solid #fff;
     padding: 10px 15px 20px 15px;
     border-radius: 15px;
     h2{
         text-align: center;
         margin-bottom: 20px;
-        font-size: 2.2rem;
-        letter-spacing: 1px;
+        font-size: 2.4rem;
+        letter-spacing: 2px;
         color: #fff;
+        animation: animateLogin 3s infinite;
+    }
+}
+
+@keyframes animateLogin{
+    10%{
+        filter: drop-shadow(0 0 3px #fff);
+    }
+    30%{
+        filter: drop-shadow(0 0 5px #fff);
+    }
+    100%{
+        filter: drop-shadow(0 0 4px #fff);
     }
 }
 
@@ -49,7 +62,7 @@
     }
     button{
         width: 100%;
-        padding: 10px 0px;
+        padding: 8px 0px;
         border: none;
         border-radius: 5px;
         font-size: 20px;
@@ -69,5 +82,14 @@
             cursor: pointer;
         }
     }
-
+}
+.checkout-text{
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: .4px;
+    a{
+        color: var(--success-color);
+        text-decoration: none;
+        font-size: 19px;
+    }
 }

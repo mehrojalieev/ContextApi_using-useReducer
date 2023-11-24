@@ -1,5 +1,5 @@
 import "./Login.scss"
-
+import { Link } from "react-router-dom"
 const Login = () => {
   return (
     <div className="login__wrapper">
@@ -14,6 +14,9 @@ const Login = () => {
           <input id="Password" type="password" />
         </div>
         <button>Login</button>
+        <p className="checkout-text">
+          If You don't have an account ? <Link to='/auth/signup'>Sign Up</Link>
+        </p>
       </form>
     </div>
   )
