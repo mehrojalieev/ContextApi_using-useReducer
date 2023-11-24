@@ -29,7 +29,9 @@ const SignUp = () => {
       .then(data => {
         console.log(data)
         if (data) {
-          window.location.pathname = "/auth/login"
+          localStorage.setItem("name", data.name)
+          localStorage.setItem("email", data.email)
+          setTimeout(() => { window.location.pathname = "/auth/login" }, 1700)
         }
 
       })
