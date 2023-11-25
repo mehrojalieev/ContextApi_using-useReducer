@@ -28,10 +28,13 @@ const SignUp = () => {
       .then(response => response.json())
       .then(data => {
         console.log(data)
-        if (data) {
+        if (name.trim() > 1 ) {
           localStorage.setItem("name", data.name)
           localStorage.setItem("email", data.email)
           setTimeout(() => { window.location.pathname = "/auth/login" }, 1700)
+        } else {
+          alert("Something Error")
+
         }
 
       })
@@ -61,6 +64,8 @@ const SignUp = () => {
         <p className="checkout-text">
           If You  have an account ? <Link to='/auth/login'>Login</Link>
         </p>
+        {/* Loading */}
+        <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
       </form>
     </div>
   )
