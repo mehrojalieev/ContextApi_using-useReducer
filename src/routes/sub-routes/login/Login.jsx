@@ -33,6 +33,9 @@ const Login = () => {
           <input value={loginEmail} onChange={(e) => setLoginEmail(e.target.value)} id="Email" type="email" />
         </div>
         <button type="submit">Login</button>
+        {/* Loaidng */}
+        <div  className="lds-ring"><div></div><div></div><div></div><div></div></div>
+        {/*  */}
         <p className="checkout-text">
           If You don't have an account ? <Link to='/auth/signup'>Sign Up</Link>
         </p>
