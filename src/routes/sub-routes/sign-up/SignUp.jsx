@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useRef, useState } from "react"
 import "./SignUp.scss"
 import { Link } from "react-router-dom"
 
@@ -10,6 +10,12 @@ const SignUp = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [avatar, setAvatar] = useState('')
+
+  const [loadingBtn, setLoadingBtn] = useState(false)
+
+  const signupbtn = useRef()
+  const SignUpBtn = signupbtn.current
+  
 
   const handleCreateUser = (e) => {
     e.preventDefault()
@@ -28,7 +34,9 @@ const SignUp = () => {
       .then(response => response.json())
       .then(data => {
         console.log(data)
-        if (name.trim() > 1 ) {
+        if (data.email && data.password) {
+          setLoadingBtn(true)
+          SignUpBtn.style = "cursor: not-allowed; opacity: 0.6;"
           localStorage.setItem("name", data.name)
           localStorage.setItem("email", data.email)
           setTimeout(() => { window.location.pathname = "/auth/login" }, 1700)
@@ -60,12 +68,12 @@ const SignUp = () => {
           <label htmlFor="Avatar">Avatar</label>
           <input value={avatar} onChange={(e) => setAvatar(e.target.value)} id="Avatar" type="text" />
         </div>
-        <button type="submit">Sign Up</button>
+        <button ref={signupbtn} type="submit">Sign Up</button>
         <p className="checkout-text">
           If You  have an account ? <Link to='/auth/login'>Login</Link>
         </p>
         {/* Loading */}
-        <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
+        <div style={loadingBtn ? {display: "block"} : {display: "none"}} className="lds-ring"><div></div><div></div><div></div><div></div></div>
       </form>
     </div>
   )
