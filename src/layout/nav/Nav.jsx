@@ -1,7 +1,11 @@
 import "./nav.scss"
 import { NavLink, Link } from "react-router-dom"
 import { FaShoppingCart } from "react-icons/fa";
+
+
 const Nav = () => {
+
+  const userData = localStorage.getItem("name")
   return (
     <nav>
       <div className="nav__logo">
@@ -26,7 +30,11 @@ const Nav = () => {
 
       </div>
       <div className="profile-user">
-          <Link to="auth/login">Login</Link>
+          {
+            userData ? <Link>Account</Link>
+            : <Link to="auth/login">Login</Link> 
+             
+          }
       </div>
     </nav>
   )

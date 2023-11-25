@@ -40,7 +40,7 @@ const Login = () => {
         </div>
         <button ref={loginbtn} type="submit">Login</button>
         {/* Loaidng */}
-        <div style={loadingBtn ? {display:"block"} : {display: "none"}} className="lds-ring"><div></div><div></div><div></div><div></div></div>
+        <div style={loadingBtn ? {display:"block", cursor: "not-allowed"} : {display: "none"}} className="lds-ring"><div></div><div></div><div></div><div></div></div>
         {/*  */}
         <p className="checkout-text">
           If You don't have an account ? <Link to='/auth/signup'>Sign Up</Link>
