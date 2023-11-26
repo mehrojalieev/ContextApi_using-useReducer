@@ -2,10 +2,12 @@ import { useRef, useState } from "react"
 import "./SignUp.scss"
 import { Link } from "react-router-dom"
 import { apiInstance } from "../../../api"
-
+import { useDispatch } from "react-redux"
 
 
 const SignUp = () => {
+
+const dispatch = useDispatch()
 
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -28,6 +30,7 @@ const SignUp = () => {
     })
       .then(response => {
         if (response.status === 201) {
+          dispatch(AUTH(response))
           console.log(response);
           SignUpBtn.style = "cursor: not-allowed; opacity: 0.6;"
           setLoadingBtn(true)
