@@ -1,0 +1,11 @@
+@mixin f-style($fSize, $color, $fWeight){
+    font-size: $fSize;
+    color: $color;
+    font-weight: $fWeight;
+}
+
+%btn-style{
+    border: none;
+    border-radius: 5px;
+    
+}

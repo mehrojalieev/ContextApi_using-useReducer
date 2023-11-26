@@ -3,12 +3,12 @@ import { useDispatch, useSelector } from 'react-redux'
 
 
 const Cart = () => {
-  const data = useSelector(state => state.cart)
+  const data = useSelector(state => state.cart_data.cart)
   console.log(data);
   return (
     <div className='cart-wrapper'>
       <div className="cart-container">
-        {
+        {/* {
           data.cart_products.splice(0, 30).map((product, index) =>
             <div key={index} className='product-card'>
               <div className="card-img">
@@ -26,7 +26,7 @@ const Cart = () => {
 
             </div>
           )
-        }
+        } */}
       </div>
     </div>
   )
