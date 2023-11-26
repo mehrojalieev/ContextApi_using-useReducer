@@ -1,13 +1,13 @@
 import "./Main.scss"
-import { useState, useReducer, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { FaCartPlus } from "react-icons/fa"
 import { apiInstance } from "../../api"
 import { Link } from "react-router-dom"
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
+import { ADD_CART } from "../../redux/slices/cartSlices"
 
 const Main = () => {
     const dispatch = useDispatch()
-    const cartproducts = useSelector(state => state.cart.cart_products)
     const [products, setProducts] = useState([])
     const btn = useRef()
 
@@ -19,11 +19,9 @@ const Main = () => {
             })
     }, [])
 
-    const handleAddToCart = (product) => {
-        product.count = 1;
-        dispatch({ type: "ADD_TO_CART", product })
-    }
-    console.log(cartproducts);
+    // const handleAddToCart = (product) => {
+    //     dispatch(ADD_CART(product))
+    // }
 
     return (
         <>
@@ -45,7 +43,7 @@ const Main = () => {
                                     <div className="card-btns">
                                         <Link className='view-btn' to={`product-view/${product.id}`}>View Deal  &#8599;</Link>
 
-                                        <button ref={btn} onClick={() => { handleAddToCart(product) }} className={'addcart-btn'}><i><FaCartPlus /></i> </button>
+                                        <button ref={btn} onClick={() => dispatch(ADD_CART(product))} className={'addcart-btn'}><i><FaCartPlus /></i> </button>
                                     </div>
                                 </div>
 
