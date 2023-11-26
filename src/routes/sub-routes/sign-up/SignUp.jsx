@@ -1,6 +1,7 @@
 import { useRef, useState } from "react"
 import "./SignUp.scss"
 import { Link } from "react-router-dom"
+import { apiInstance } from "../../../api"
 
 
 
@@ -15,36 +16,24 @@ const SignUp = () => {
 
   const signupbtn = useRef()
   const SignUpBtn = signupbtn.current
-  
+
 
   const handleCreateUser = (e) => {
     e.preventDefault()
-    fetch('https://api.escuelajs.co/api/v1/users/', {
-      method: "POST",
-      body: JSON.stringify({
-        name: name,
-        email: email,
-        password: password,
-        avatar: avatar
-      }),
-      headers: {
-        "Content-Type": 'application/json'
-      }
+    apiInstance.post('/users/', {
+      name: name,
+      email: email,
+      password: password,
+      avatar: avatar
     })
-      .then(response => response.json())
-      .then(data => {
-        console.log(data)
-        if (data.email && data.password) {
-          setLoadingBtn(true)
+      .then(response => {
+        if (response.status === 201) {
+          console.log(response);
           SignUpBtn.style = "cursor: not-allowed; opacity: 0.6;"
-          localStorage.setItem("name", data.name)
-          localStorage.setItem("email", data.email)
+          setLoadingBtn(true)
+          localStorage.setItem("user-data", JSON.stringify(response.data))
           setTimeout(() => { window.location.pathname = "/auth/login" }, 1700)
-        } else {
-          alert("Something Error")
-
         }
-
       })
   }
 
@@ -73,7 +62,7 @@ const SignUp = () => {
           If You  have an account ? <Link to='/auth/login'>Login</Link>
         </p>
         {/* Loading */}
-        <div style={loadingBtn ? {display: "block"} : {display: "none"}} className="lds-ring"><div></div><div></div><div></div><div></div></div>
+        <div style={loadingBtn ? { display: "block" } : { display: "none" }} className="lds-ring"><div></div><div></div><div></div><div></div></div>
       </form>
     </div>
   )
