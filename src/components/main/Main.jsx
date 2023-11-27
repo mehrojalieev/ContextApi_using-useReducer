@@ -4,7 +4,7 @@ import { FaCartPlus } from "react-icons/fa"
 import { apiInstance } from "../../api"
 import { Link } from "react-router-dom"
 import { useDispatch } from "react-redux"
-import {  addToCart } from "../../redux/slices/cartSlices"
+import { addToCart } from "../../redux/slices/cartSlices"
 
 const Main = () => {
     const dispatch = useDispatch()
@@ -39,7 +39,7 @@ const Main = () => {
                                         <span>35% off</span>
                                     </div>
                                     <div className="card-btns">
-                                        <Link className='view-btn' to={`product-view/${product.id}`}>View Deal  &#8599;</Link>
+                                        <Link className='views-btn' to={`product-view/${product.id}`}>View Deal  &#8599;</Link>
 
                                         <button ref={btn} onClick={() => dispatch(addToCart(product))} className={'addcart-btn'}><i><FaCartPlus /></i> </button>
                                     </div>

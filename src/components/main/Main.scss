@@ -1,0 +1,129 @@
+@import "../../scss/variables.scss";
+
+.product-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    height: 100vh;
+    margin: 50px auto;
+    overflow-y: auto;
+}
+
+.product__card-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px 10px;
+    padding: 20px 0;
+}
+
+.product-card {
+    width: 350px;
+    border-radius: 25px;
+    overflow: hidden;
+    padding-bottom: 10px;
+    box-shadow: 0 0 5px #808080;
+
+    .card-img {
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            transition: 0.3s;
+
+            &:hover {
+                transform: scale(1.09);
+            }
+        }
+    }
+}
+
+.product-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px 0;
+    margin-top: 10px;
+    padding: 0px 10px;
+
+    h3 {
+        @include f-style(20px, #fff, 700);
+    }
+
+    p {
+        @include f-style(16px, #b8b6b6, 500);
+        line-height: 20px;
+    
+    }
+
+    .price-card {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 0px 30px;
+
+        strong {
+            @include f-style(20px, #fff, 700);
+
+        }
+
+        span {
+            @include f-style(18px, --success-color, 700);
+            padding: 3px 5px;
+            border: 1px solid var(--success-color);
+            border-radius: 4px;
+
+        }
+    }
+
+    .card-btns {
+        display: flex;
+        align-items: center;
+        gap: 0px 17px;
+
+        .views-btn  {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 230px;
+            padding: 10px 0px;
+            border-radius: 30px;
+            background-color: var(--success-color);
+            transition: 0.3s;
+            text-decoration: none;
+            @extend %btn-style;
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.05);
+            }
+        }
+
+
+    }
+}
+
+.addcart-btn {
+    border: 1px solid var(--success-color);
+    border-radius: 50%;
+    background: transparent;
+    padding: 8px 10px 2px 9px;
+    @include f-style(24px, --success-color, 500);
+    transition: 0.2s;
+
+
+}
+
+
+.active {
+    border: 1px solid #fff;
+    background-color: var(--success-color);
+    color: #fff;
+    transform: scale(0.95);
+    font-size: 24px;
+    padding: 8px 10px 2px 9px;
+    border-radius: 50%;
+}

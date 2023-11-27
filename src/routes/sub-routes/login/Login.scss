@@ -1,3 +1,4 @@
+@import "../../../scss/variables.scss";
 .login__wrapper {
     width: 430px;
     height: auto;
@@ -8,10 +9,9 @@
 
     h2 {
         text-align: center;
+        @include f-style(2.4rem, #fff, _);
         margin-bottom: 20px;
-        font-size: 2.4rem;
         letter-spacing: 2px;
-        color: #fff;
         animation: animateLogin 3s infinite;
     }
 }
@@ -45,20 +45,18 @@
         gap: 10px;
 
         label {
-            font-size: 20px;
+            @include f-style(20px, #fff, 500);
             letter-spacing: 1px;
-            color: #fff;
         }
 
         input {
-            font-size: 18px;
+            @include f-style(18px, #fff, 500);
             height: 40px;
             text-indent: 15px;
             outline: none;
             background-color: transparent;
             border: 1px solid #fff;
             border-radius: 5px;
-            color: #fff;
             transition: 0.2s;
 
             &:focus {
@@ -73,16 +71,11 @@
         position: relative;
         width: 100%;
         padding: 8px 0px;
-        border: none;
-        border-radius: 5px;
-        font-size: 20px;
-        font-weight: 500;
+        @extend %btn-style;
         letter-spacing: .7px;
         background: transparent;
         border: 1px solid #fff;
-        border-radius: 5px;
         margin-top: 10px;
-        color: #fff;
         transition: 0.2s;
 
         &:hover {
@@ -96,8 +89,7 @@
 }
 
 .checkout-text {
-    color: #fff;
-    font-size: 18px;
+    @include f-style(18px, #fff, 500);
     letter-spacing: .4px;
 
     a {
