@@ -1,28 +1,31 @@
-nav{
-    position: sticky;
+@import "../../scss/variables.scss";
+nav {
+    // position: sticky;
     top: 0;
     backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%; 
-    max-width: 1200px;   
-    margin:  auto;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
     padding: 0px 20px;
     height: 70px;
 }
-.nav__logo{
-    h1{
-        font-size: 2rem;
-        color: var(--success-color);
+
+.nav__logo {
+    h1 {
+        @include f-style(2rem, --success-color, 700)
     }
 }
-.nav-menu{
+
+.nav-menu {
     display: flex;
     align-items: center;
     gap: 0px 30px;
     list-style: none;
-    a{
+
+    a {
         display: flex;
         align-items: center;
         gap: 0px 6px;
@@ -31,17 +34,19 @@ nav{
         font-size: 20px;
         transition: 0.2s;
         color: #fff;
-        &:hover{
+
+        &:hover {
             opacity: 0.7;
-        }  
-      
+        }
+
     }
 }
 
-.navbar-cart{
+.navbar-cart {
     display: flex;
     align-items: center;
-    .cart{
+
+    .cart {
         display: flex;
         align-items: center;
         gap: 0px 10px;
@@ -53,24 +58,29 @@ nav{
         border-radius: 5px;
         border: 1px solid var(--success-color);
         transition: 0.2s;
-        &:hover{
+
+        &:hover {
             background-color: var(--success-color);
             transform: scale(1.1);
             letter-spacing: 1.5px;
         }
-        &:active{
+
+        &:active {
             transform: scale(.95);
         }
     }
 }
-.cart-active{
+
+.cart-active {
     background-color: var(--success-color);
 }
-.profile-user{
+
+.profile-user {
     display: flex;
     align-items: center;
     gap: 0px 30px;
-    a{
+
+    a {
         display: flex;
         align-items: center;
         gap: 0px 10px;
@@ -81,20 +91,23 @@ nav{
     }
 }
 
-.create__product-link{
+.create__product-link {
     padding: 10px 10px;
     border-radius: 5px;
     transition: 0.2s;
     background-color: var(--success-color);
-    &:hover{
+
+    &:hover {
         transform: scale(1.03);
         box-shadow: 0 0 10px 1px var(--success-color);
     }
-    &:active{
+
+    &:active {
         transform: scale(0.96);
     }
 }
-.link--active{
+
+.link--active {
     border-bottom: 2px solid #18a661;
     padding-bottom: 2px;
     color: #18a661 !important;

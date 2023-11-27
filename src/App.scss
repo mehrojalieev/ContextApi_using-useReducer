@@ -1,4 +1,10 @@
+@import "./scss/reset.scss";
 
+
+body{
+    background-color: #000;
+    font-family: sans-serif;
+}
 ::-webkit-scrollbar {
     display: none;
 }
